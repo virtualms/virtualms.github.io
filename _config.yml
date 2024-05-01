@@ -1,3 +1,121 @@
-theme: jekyll-theme-minimal
-title: Homepage
-description: This is a test description
+# For reference https://github.com/sproogen/modern-resume-theme/blob/master/_config.yml
+
+# Site
+repository: virtualms/virtualms.github.io
+favicon: images/favicon.ico
+
+# Content configuration version
+version: 2
+
+# Personal info
+name: Vincenzo Maria Stanzione
+title: Machine Learning & Software Engineer
+email: v.m.stanzione@gmail.com
+phone: (+39) 3402384590
+# website: placeholder
+
+# Dark Mode (true/false/never)
+darkmode: never
+
+# Social links
+github_username:  virtualms
+instagram_username: vincenzo_m_stanzione
+linkedin_username: vincenzo-maria-stanzione-4172a019b
+
+# Additional icon links
+additional_links:
+ - title: CV
+   icon: fas fa-regular fa-file-pdf
+   url: https://drive.google.com/file/d/1xHZFLX1c2JBueCjHNtUIBSvzB0CSG4jx/view
+
+
+# About Section
+# about_title: About Me
+about_profile_image: images/profile.jpg
+about_content: | # this will include new lines to allow paragraphs
+  I am a passionate software and machine learning engineer driven by curiosity to explore different technologies in the IT world. I excel at solving tough problems in teamwork, always aiming for results. I believe in constant learning and staying connected to new technologies.
+
+  My main interests are backend development, cloud infrastuctures, software engineering and generative AI.
+
+  Download my full cv [here](https://drive.google.com/file/d/1xHZFLX1c2JBueCjHNtUIBSvzB0CSG4jx/view).
+
+content:
+
+  - title: Experience # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: Machine Learning Reply
+        link: https://www.reply.com/machine-learning-reply/it/
+        sub_title: Machine Learning and Software Engineer
+        caption: May 2022 - Present, Milan
+        description: | 
+            I was involved in these projects:
+            - Implementation of __devops pipelines__ for Eni S.p.a infrastructure to support management of Azure resources such as Azure Machine Learning, Azure Synapse, Azure Workspaces and DBs
+            - Design and implementation of the back-end of a conversational __Chat Assistant__ for UnipolSai based on __Java Spring Boot__ and __Google DialogFlow CX__
+            - Design and implementation of a __Retrieval-augmented generation (RAG)__ full-stack PoC application for Eni S.p.a, based on python (__llama-index__) and React to create a Q&A agent on a custom knowledge base
+            - Design and implementation of a Generative AI full-stack PoC for Eni S.p.a to __draft domain specific documents__ leveraging GPT + Azure Document Intelligence, given in input structured and unstructured files
+            - Design and implementation of the backend and processing + indexing pipeline of a __Multimodal Retrieval-augmented generation (RAG) application__ based on python (langchain), QDrant and Gemini-vision-pro
+      
+            I am also working as a member of the internal Architectural Solution Design Team for UnipolSai.
+
+            <mark>Skills</mark>: Azure, AWS, Back-end development, Google Cloud, Python, llama-index, langchain, Terraform, Devops pipelines, Machine learning , Java, Spring Boot, DevOps
+
+      - layout: left
+        title: CRIF
+        link: https://www.crif.it/
+        sub_title: Data Scientist
+        caption: October 2021 - January 2022, Bologna 
+        description: | 
+          Implementation of a brand-new global model agnostic __machine learning explanation framework__ in the context of CRM, based on LIME technique.
+
+          <mark>Skills</mark>: python, numpy, pandas, sklearn
+
+
+  - title: Education # Title for the section
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: Alma Mater Studiorum Bologna
+        caption: October 2019 - March 2022
+        sub_title: MSc Computer Science
+        description: |
+          _Final Dissertation_: “Developing a New technique for Machine Learning Explainability combining Local and Global Model-Agnostic Approaches”
+
+      - layout: left
+        title: Alma Mater Studiorum Bologna
+        caption: September 2016 - December 2019
+        sub_title: BSc Computer Science
+        description: |
+          _Final Dissertation_: “Experimentation and Performance Analysis on FaaS Platforms”
+  
+  - title: Certifications
+    layout: list # Type of content section (list/text)
+    content:
+      - layout: left
+        title: Google
+        caption: November 2023
+        sub_title: Google Professional Cloud Developer
+        description: |
+          _ID_: [f9fdf84e3bec494a9e2faf8804ab49f0](https://t.ly/OtJ5b)
+
+      - layout: left
+        title: British Council
+        caption: May 2021
+        sub_title: IELTS C1 - Grade 7.5
+        description: |
+          _ID_: 20IT010412STAV010A
+
+# Footer
+footer_show_references: true
+references_title: May 2024 📅
+
+# Build settings
+remote_theme: sproogen/resume-theme
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+ - jekyll-seo-tag

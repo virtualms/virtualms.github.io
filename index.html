@@ -19,8 +19,12 @@
         <div class="header-controls">
             <button id="theme-toggle" title="Toggle Dark Mode">🌙</button>
             <nav>
-                <button id="nav-cv" class="active">Profilo / CV</button>
+                <button id="nav-cv" class="active">
+                    <span class="lang-it">Profilo / CV</span>
+                    <span class="lang-en">Profile / CV</span>
+                </button>
                 <button id="nav-blog">Blog</button>
+                <button id="lang-toggle" title="Cambia Lingua / Change Language">ENG</button>
             </nav>
         </div>
     </header>
@@ -33,16 +37,20 @@
                 <img src="images/profile.png" alt="Vincenzo Maria Stanzione" class="profile-img">
                 <div class="profile-info">
                     <h2>Cloud & Software Engineer</h2>
-                    <p><strong>Nato a:</strong> Avezzano (AQ), 27/02/1998</p>
+                    <p>
+                        <strong class="lang-it">Nato a:</strong><strong class="lang-en">Born in:</strong> Avezzano (AQ), 27/02/1998
+                    </p>
                     <p><strong>Email:</strong> <a href="mailto:v.m.stanzione@gmail.com">v.m.stanzione@gmail.com</a></p>
                     <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/vincenzomariastanzione" target="_blank">linkedin.com/in/vincenzomariastanzione</a></p>
                 </div>
             </div>
 
             <div class="card">
-                <h2>Presentazione</h2>
+                <h2 class="lang-it">Presentazione</h2>
+                <h2 class="lang-en">About Me</h2>
                 <h3>Software Engineer | AWS Cloud Native & Serverless Architect</h3>
-                <p>Sono un Cloud engineer con 4 anni di esperienza, specializzato nella progettazione e ottimizzazione di architetture Cloud Native ad alta scalabilità su AWS, con un focus verticale sulle tecnologie Serverless. Traduco requisiti complessi in soluzioni resilienti e performanti, curando l'intero ciclo di vita del software. Credo fermamente nella collaborazione interfunzionale come motore per l'innovazione e l'eccellenza tecnica.</p>
+                <p class="lang-it">Sono un Cloud engineer con 4 anni di esperienza, specializzato nella progettazione e ottimizzazione di architetture Cloud Native ad alta scalabilità su AWS, con un focus verticale sulle tecnologie Serverless. Traduco requisiti complessi in soluzioni resilienti e performanti, curando l'intero ciclo di vita del software. Credo fermamente nella collaborazione interfunzionale come motore per l'innovazione e l'eccellenza tecnica.</p>
+                <p class="lang-en">I am a Cloud engineer with 4 years of experience, specialized in designing and optimizing highly scalable Cloud Native architectures on AWS, with a vertical focus on Serverless technologies. I translate complex requirements into resilient and performant solutions, managing the entire software lifecycle. I firmly believe in cross-functional collaboration as an engine for innovation and technical excellence.</p>
             </div>
 
             <div class="card">
@@ -54,7 +62,7 @@
                     <span class="badge">Data Platforming</span>
                     <span class="badge">Team Leading</span>
                 </div>
-                <p style="margin-top: 1rem;"><strong>Tecnologie:</strong></p>
+                <p style="margin-top: 1rem;"><strong class="lang-it">Tecnologie:</strong><strong class="lang-en">Technologies:</strong></p>
                 <div>
                     <span class="badge">Python</span>
                     <span class="badge">Typescript</span>
@@ -66,11 +74,15 @@
             </div>
 
             <div class="card">
-                <h2>Esperienza Lavorativa</h2>
+                <h2 class="lang-it">Esperienza Lavorativa</h2>
+                <h2 class="lang-en">Work Experience</h2>
                 
                 <h3>Storm Reply | Senior Cloud & Software Engineer</h3>
-                <div class="job-date">Settembre 2024 - Attuale, Roma</div>
-                <ul>
+                <div class="job-date">
+                    <span class="lang-it">Settembre 2024 - Attuale, Roma</span>
+                    <span class="lang-en">September 2024 - Present, Rome</span>
+                </div>
+                <ul class="lang-it">
                     <li>Coordinato un team di 2-3 ingegneri, guidando lo sviluppo e prendendo decisioni chiave di progettazione tecnica.</li>
                     <li>Sviluppo di API REST con Python (FastAPI) e Typescript / Express.</li>
                     <li>Gestione Infrastructure as Code (IaC) con Terraform.</li>
@@ -79,62 +91,102 @@
                     <li>Ottimizzazione elaborazione dati massivi con AWS Batch e Pandas/Polars.</li>
                     <li>Gestione migrazioni dati on-premises verso AWS Cloud e ottimizzazione AWS Aurora.</li>
                 </ul>
+                <ul class="lang-en">
+                    <li>Coordinated a team of 2-3 engineers, leading development and making key technical design decisions.</li>
+                    <li>Development of REST APIs with Python (FastAPI) and Typescript / Express.</li>
+                    <li>Infrastructure as Code (IaC) management with Terraform.</li>
+                    <li>Data flow development with AWS Glue, Athena and Step Functions.</li>
+                    <li>Deployment of event-driven microservices with AWS Lambda and EventBridge.</li>
+                    <li>Massive data processing optimization with AWS Batch and Pandas/Polars.</li>
+                    <li>On-premises to AWS Cloud data migration management and AWS Aurora optimization.</li>
+                </ul>
 
                 <h3>Machine Learning Reply | Machine Learning & Software Engineer</h3>
-                <div class="job-date">Maggio 2022 - Settembre 2024, Milano</div>
-                <ul>
+                <div class="job-date">
+                    <span class="lang-it">Maggio 2022 - Settembre 2024, Milano</span>
+                    <span class="lang-en">May 2022 - September 2024, Milan</span>
+                </div>
+                <ul class="lang-it">
                     <li>Implementazione di pipeline DevOps per infrastruttura Azure (Eni S.p.a).</li>
                     <li>Sviluppo back-end per Assistente Chat con Java Spring Boot e Google DialogFlow CX (UnipolSai).</li>
                     <li>Progettazione PoC RAG full-stack con Python (llama-index) e React, con BE su Google Cloud.</li>
                     <li>Implementazione soluzioni AI Generativa basate su GPT e Gemini-vision-pro.</li>
                 </ul>
+                <ul class="lang-en">
+                    <li>Implementation of DevOps pipelines for Azure infrastructure (Eni S.p.a).</li>
+                    <li>Back-end development for Chat Assistant with Java Spring Boot and Google DialogFlow CX (UnipolSai).</li>
+                    <li>Full-stack RAG PoC design with Python (llama-index) and React, with BE on Google Cloud.</li>
+                    <li>Implementation of Generative AI solutions based on GPT and Gemini-vision-pro.</li>
+                </ul>
 
                 <h3>CRIF | Data Scientist</h3>
-                <div class="job-date">Ottobre 2021 - Gennaio 2022, Bologna</div>
-                <ul>
+                <div class="job-date">
+                    <span class="lang-it">Ottobre 2021 - Gennaio 2022, Bologna</span>
+                    <span class="lang-en">October 2021 - January 2022, Bologna</span>
+                </div>
+                <ul class="lang-it">
                     <li>Implementazione di un framework AI di explainability (LIME) per il Credit Risk Management.</li>
                 </ul>
-            </div>
-
-            <div class="card">
-                <h2>Istruzione</h2>
-                <h3>Alma Mater Studiorum Bologna | Laurea Magistrale in Ingegneria Informatica</h3>
-                <div class="job-date">Ottobre 2019 - Marzo 2022, Bologna (110L/110)</div>
-                
-                <h3>Alma Mater Studiorum Bologna | Laurea Triennale in Ingegneria Informatica</h3>
-                <div class="job-date">Settembre 2016 - Dicembre 2019, Bologna (107/110)</div>
-            </div>
-
-            <div class="card">
-                <h2>Certificazioni</h2>
-                <ul>
-                    <li><strong>HashiCorp Certified:</strong> Terraform Associate (Luglio 2025): <a href="https://t.ly/3AGjQ" target="_blank">Link</a></li>
-                    <li><strong>AWS Certified Data Engineer:</strong> Associate (Giugno 2025): <a href="https://t.ly/FHt3F" target="_blank">Link</a></li>
-                    <li><strong>Google Professional Cloud Developer</strong> (Novembre 2023): <a href="https://t.ly/OtJ5b" target="_blank">Link</a></li>
-                    <li><strong>IELTS C1</strong> (Maggio 2021)</li>
-                    <li><strong>Cambridge B2</strong> (Maggio 2016)</li>
+                <ul class="lang-en">
+                    <li>Implementation of an AI explainability framework (LIME) for Credit Risk Management.</li>
                 </ul>
             </div>
 
             <div class="card">
-                <h2>Pubblicazioni</h2>
-                <p><strong>GLEAMS: Bridging the Gap Between Local and Global Explanations</strong> (Agosto 2024).<br> Disponibile su: <a href="https://www.arxiv.org/abs/2408.05060" target="_blank">arxiv.org/abs/2408.05060</a></p>
+                <h2 class="lang-it">Istruzione</h2>
+                <h2 class="lang-en">Education</h2>
+                
+                <h3>Alma Mater Studiorum Bologna | <span class="lang-it">Laurea Magistrale in Ingegneria Informatica</span><span class="lang-en">Master's Degree in Computer Engineering</span></h3>
+                <div class="job-date">
+                    <span class="lang-it">Ottobre 2019 - Marzo 2022, Bologna (110L/110)</span>
+                    <span class="lang-en">October 2019 - March 2022, Bologna (110L/110)</span>
+                </div>
+                
+                <h3>Alma Mater Studiorum Bologna | <span class="lang-it">Laurea Triennale in Ingegneria Informatica</span><span class="lang-en">Bachelor's Degree in Computer Engineering</span></h3>
+                <div class="job-date">
+                    <span class="lang-it">Settembre 2016 - Dicembre 2019, Bologna (107/110)</span>
+                    <span class="lang-en">September 2016 - December 2019, Bologna (107/110)</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="lang-it">Certificazioni</h2>
+                <h2 class="lang-en">Certifications</h2>
+                <ul>
+                    <li><strong>HashiCorp Certified:</strong> Terraform Associate (<span class="lang-it">Luglio</span><span class="lang-en">July</span> 2025): <a href="https://t.ly/3AGjQ" target="_blank">Link</a></li>
+                    <li><strong>AWS Certified Data Engineer:</strong> Associate (<span class="lang-it">Giugno</span><span class="lang-en">June</span> 2025): <a href="https://t.ly/FHt3F" target="_blank">Link</a></li>
+                    <li><strong>Google Professional Cloud Developer</strong> (<span class="lang-it">Novembre</span><span class="lang-en">November</span> 2023): <a href="https://t.ly/OtJ5b" target="_blank">Link</a></li>
+                    <li><strong>IELTS C1</strong> (<span class="lang-it">Maggio</span><span class="lang-en">May</span> 2021)</li>
+                    <li><strong>Cambridge B2</strong> (<span class="lang-it">Maggio</span><span class="lang-en">May</span> 2016)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2 class="lang-it">Pubblicazioni</h2>
+                <h2 class="lang-en">Publications</h2>
+                <p><strong>GLEAMS: Bridging the Gap Between Local and Global Explanations</strong> (<span class="lang-it">Agosto</span><span class="lang-en">August</span> 2024).<br> 
+                    <span class="lang-it">Disponibile su:</span><span class="lang-en">Available at:</span> <a href="https://www.arxiv.org/abs/2408.05060" target="_blank">arxiv.org/abs/2408.05060</a>
+                </p>
             </div>
         </section>
 
         <!-- Sezione Blog Index -->
         <section id="section-blog">
             <div class="card">
-                <h2>Blog / Considerazioni</h2>
+                <h2 class="lang-it">Blog / Considerazioni</h2>
+                <h2 class="lang-en">Blog / Thoughts</h2>
                 <div id="blog-list">
-                    <p>Caricamento articoli in corso...</p>
+                    <!-- Javascript populates this -->
                 </div>
             </div>
         </section>
 
         <!-- Sezione Articolo Singolo (nascosta inizialmente) -->
         <section id="section-article">
-            <button id="back-to-blog" class="btn">← Torna al Blog</button>
+            <button id="back-to-blog" class="btn">
+                <span class="lang-it">← Torna al Blog</span>
+                <span class="lang-en">← Back to Blog</span>
+            </button>
             <div id="article-content">
                 <!-- Il markdown renderizzato andrà qui -->
             </div>

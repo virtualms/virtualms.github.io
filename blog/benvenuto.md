@@ -2,6 +2,7 @@
 title: "Benvenuto nel mio nuovo Blog!"
 date: "2026-05-25"
 summary: "Primo articolo di test per la nuova infrastruttura SPA."
+lang: "it"
 ---
 
 # Benvenuto nel mio nuovo spazio!

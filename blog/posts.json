@@ -3,6 +3,14 @@
         "title": "Benvenuto nel mio nuovo Blog!",
         "date": "2026-05-25",
         "summary": "Primo articolo di test per la nuova infrastruttura SPA.",
+        "lang": "it",
         "file": "benvenuto.md"
+    },
+    {
+        "title": "Welcome to my new Blog!",
+        "date": "2026-05-25",
+        "summary": "First test article for the new SPA infrastructure.",
+        "lang": "en",
+        "file": "welcome.md"
     }
 ]

@@ -383,3 +383,16 @@ a:hover {
     text-align: center;
   }
 }
+
+/* Internazionalizzazione (i18n) */
+.lang-en { display: none !important; }
+body.en-mode .lang-it { display: none !important; }
+
+/* Ripristino display per vari tipi di elementi in inglese */
+body.en-mode .lang-en { display: block !important; }
+body.en-mode span.lang-en, 
+body.en-mode a.lang-en, 
+body.en-mode strong.lang-en, 
+body.en-mode button.lang-en { 
+  display: inline-block !important; 
+}

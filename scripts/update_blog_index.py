@@ -34,11 +34,13 @@ def main():
             title = frontmatter.get('title', filename.replace('-', ' ').replace('.md', '').title())
             date = frontmatter.get('date', 'N/A')
             summary = frontmatter.get('summary', 'Leggi l\'articolo...')
+            lang = frontmatter.get('lang', 'it')
             
             posts.append({
                 'title': title,
                 'date': date,
                 'summary': summary,
+                'lang': lang,
                 'file': filename
             })
             

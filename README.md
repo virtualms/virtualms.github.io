@@ -20,16 +20,18 @@ Dopodiché, apri il browser all'indirizzo [http://localhost:8000](http://localho
 ## 📝 Come aggiungere un articolo al Blog
 
 1. Vai nella cartella `blog/` e crea un nuovo file con estensione `.md` (es: `il-mio-nuovo-post.md`).
-2. Usa la sintassi del Frontmatter all'inizio del file per definire titolo, data e sommario. Ad esempio:
+2. Usa la sintassi del Frontmatter all'inizio del file per definire titolo, data, sommario e **lingua**. Ad esempio:
     ```markdown
     ---
     title: "Il mio nuovo post"
     date: "2026-06-01"
     summary: "Una breve descrizione che apparirà nella lista degli articoli."
+    lang: "it"
     ---
     Qui inizi a scrivere l'articolo in Markdown...
     ```
-3. Salva il file.
+   *(Nota: Se ometti il campo `lang`, il sistema assumerà che l'articolo sia in italiano `it`).*
+3. Salva il file. Ricorda di creare anche la versione tradotta (es. `my-new-post.md` con `lang: "en"`)!
 4. Per far sì che l'articolo compaia nel sito, **devi aggiornare l'indice dei post**. Dal terminale, esegui:
     ```bash
     python3 scripts/update_blog_index.py
@@ -44,4 +46,5 @@ Per aggiornarle:
 1. Apri `index.html` con un editor di codice.
 2. Cerca la sezione `<section id="section-cv">`.
 3. Troverai le varie card ( `<div class="card">` ) relative a "Esperienza Lavorativa", "Istruzione", "Skills", ecc.
-4. Modifica il testo all'interno dei tag HTML e salva. Le modifiche saranno visibili immediatamente.
+4. Troverai il testo sdoppiato con le classi `<span class="lang-it">` e `<span class="lang-en">`. 
+5. Modifica il testo all'interno dei tag HTML di **entrambe** le lingue e salva. Le modifiche saranno visibili immediatamente.

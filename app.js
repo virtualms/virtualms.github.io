@@ -10,6 +10,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const articleContent = document.getElementById('article-content');
     const backToBlog = document.getElementById('back-to-blog');
     const themeToggle = document.getElementById('theme-toggle');
+    const langToggle = document.getElementById('lang-toggle');
+
+    // --- i18n Logic ---
+    let currentLang = 'it';
+    let allPosts = [];
+    let postsLoaded = false;
+
+    function setLang(lang) {
+        currentLang = lang;
+        if (lang === 'en') {
+            document.body.classList.add('en-mode');
+            if (langToggle) langToggle.textContent = 'ITA';
+            localStorage.setItem('lang', 'en');
+        } else {
+            document.body.classList.remove('en-mode');
+            if (langToggle) langToggle.textContent = 'ENG';
+            localStorage.setItem('lang', 'it');
+        }
+        
+        // Se i post sono già caricati, renderizziamo di nuovo per filtrare per lingua
+        if (postsLoaded) {
+            renderBlogList();
+        }
+    }
+
+    const savedLang = localStorage.getItem('lang') || 'it';
+    setLang(savedLang);
+
+    if (langToggle) {
+        langToggle.addEventListener('click', () => {
+            setLang(currentLang === 'it' ? 'en' : 'it');
+        });
+    }
 
     // --- Dark Mode Logic ---
     function setTheme(isDark) {
@@ -32,10 +65,12 @@ document.addEventListener('DOMContentLoaded', () => {
         setTheme(false); // Default a chiaro
     }
 
-    themeToggle.addEventListener('click', () => {
-        const isDark = document.body.classList.contains('dark-mode');
-        setTheme(!isDark);
-    });
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const isDark = document.body.classList.contains('dark-mode');
+            setTheme(!isDark);
+        });
+    }
 
     // --- Navigation Logic ---
     function hideAllSections() {
@@ -68,9 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         navBlog.classList.add('active');
     });
 
-    // Variabile per evitare di ricaricare il JSON ogni volta se già caricato
-    let postsLoaded = false;
-
+    // --- Blog Logic ---
     async function loadBlogList() {
         if (postsLoaded) return;
         
@@ -79,37 +112,47 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) {
                 throw new Error('Impossibile caricare i post');
             }
-            const posts = await response.json();
-            
-            blogList.innerHTML = ''; // Svuota il contenitore
-            
-            if (posts.length === 0) {
-                blogList.innerHTML = '<p>Nessun articolo disponibile al momento.</p>';
-                return;
-            }
-
-            posts.forEach(post => {
-                const card = document.createElement('div');
-                card.className = 'blog-post-card';
-                card.innerHTML = `
-                    <h3>${post.title}</h3>
-                    <div class="blog-date">${post.date}</div>
-                    <p>${post.summary || 'Leggi l\'articolo...'}</p>
-                `;
-                
-                card.addEventListener('click', () => {
-                    loadArticle(post.file);
-                });
-                
-                blogList.appendChild(card);
-            });
-            
+            allPosts = await response.json();
             postsLoaded = true;
+            
+            renderBlogList();
             
         } catch (error) {
             console.error('Errore durante il caricamento del blog:', error);
-            blogList.innerHTML = '<p>Errore nel caricamento degli articoli. Assicurati che posts.json esista e sia valido.</p>';
+            blogList.innerHTML = '<p class="lang-it">Errore nel caricamento degli articoli.</p><p class="lang-en">Error loading articles.</p>';
         }
+    }
+
+    function renderBlogList() {
+        blogList.innerHTML = ''; // Svuota il contenitore
+        
+        const filteredPosts = allPosts.filter(post => {
+            const postLang = post.lang || 'it';
+            return postLang === currentLang;
+        });
+        
+        if (filteredPosts.length === 0) {
+            blogList.innerHTML = currentLang === 'it' 
+                ? '<p>Nessun articolo disponibile al momento in questa lingua.</p>'
+                : '<p>No articles available in this language at the moment.</p>';
+            return;
+        }
+
+        filteredPosts.forEach(post => {
+            const card = document.createElement('div');
+            card.className = 'blog-post-card';
+            card.innerHTML = `
+                <h3>${post.title}</h3>
+                <div class="blog-date">${post.date}</div>
+                <p>${post.summary || '...'}</p>
+            `;
+            
+            card.addEventListener('click', () => {
+                loadArticle(post.file);
+            });
+            
+            blogList.appendChild(card);
+        });
     }
 
     async function loadArticle(filename) {
@@ -117,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sectionArticle.classList.add('active');
         navBlog.classList.add('active'); // Mantiene evidenziato il tab blog
         
-        articleContent.innerHTML = '<p>Caricamento articolo...</p>';
+        articleContent.innerHTML = currentLang === 'it' ? '<p>Caricamento articolo...</p>' : '<p>Loading article...</p>';
         
         try {
             const response = await fetch(`blog/${filename}`);
@@ -128,14 +171,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const markdownText = await response.text();
             
             // Usa marked.js per convertire MD in HTML
-            // Togliamo eventuale frontmatter se presente (opzionale, ma utile se c'è)
             const cleanMarkdown = markdownText.replace(/^---[\s\S]*?---/, '').trim();
-            
             articleContent.innerHTML = marked.parse(cleanMarkdown);
             
         } catch (error) {
             console.error('Errore durante il rendering dell\'articolo:', error);
-            articleContent.innerHTML = '<p>Errore nel caricamento dell\'articolo.</p>';
+            articleContent.innerHTML = currentLang === 'it' 
+                ? '<p>Errore nel caricamento dell\'articolo.</p>'
+                : '<p>Error loading article.</p>';
         }
     }
 });

@@ -18,6 +18,20 @@ Questa repository ospita il Portfolio e Blog di Vincenzo Maria Stanzione.
 - `/`: Root del progetto, contiene l'HTML, il CSS e il JS per la logica SPA.
 - `/blog`: Contiene gli articoli in Markdown e il file indice `posts.json`.
 - `/scripts`: Contiene script di utilità, come `update_blog_index.py`.
+- `/images`: Contiene file multimediali come l'immagine di profilo (`profile.png`).
 
-## Modifiche al CV
-Le informazioni del CV (Esperienze, Istruzione, ecc.) sono inserite in formato raw all'interno di `index.html` (nella sezione `#section-cv`). Per aggiornare il CV, modifica direttamente il markup di quella sezione.
+## Modifiche al CV e Immagini
+Le informazioni del CV (Esperienze, Istruzione, ecc.) sono inserite in formato raw all'interno di `index.html` (nella sezione `#section-cv`). Per aggiornare il CV, modifica direttamente il markup di quella sezione. 
+L'immagine di profilo si trova in `images/profile.png`. Eventuali operazioni di ritaglio o manipolazione vanno fatte direttamente su questo file mantenendo il nome.
+
+## Dark Mode
+Il sito supporta una Dark Mode gestita tramite il pulsante `#theme-toggle` in `index.html`. 
+- La logica in `app.js` assegna o rimuove la classe `.dark-mode` al tag `body` e salva la preferenza nel `localStorage` (chiave `theme`). 
+- Di default l'applicazione parte in modalità chiara se non vi è alcuna preferenza salvata.
+- Le variabili colore (incluse le versioni modificate per la dark mode, es. verde neon opaco, ciano e fucsia) sono definite nel file `style.css`.
+
+## Internazionalizzazione (i18n) e Traduzioni
+L'applicazione supporta il bilinguismo (Italiano/Inglese).
+- **Testi Interfaccia/CV**: Gestiti tramite classi CSS in `index.html`. Ogni testo ha una versione `<span class="lang-it">` e una `<span class="lang-en">`. 
+- **Blog**: Gestito tramite il campo `lang: it` o `lang: en` nel Frontmatter dei file Markdown. `app.js` filtra i risultati in base alla lingua attiva (salvata in `localStorage` chiave `lang`).
+- **🚨 REGOLA OBBLIGATORIA**: Ogni volta che l'utente chiede di modificare o aggiungere un'esperienza al CV, DEVI apportare la modifica in entrambe le lingue simultaneamente. Allo stesso modo, se l'utente chiede di scrivere o aggiornare un post sul blog in una lingua, DEVI creare o aggiornare automaticamente anche la versione tradotta nell'altra lingua. Non aspettare che te lo chieda esplicitamente.

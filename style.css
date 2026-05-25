@@ -1,0 +1,385 @@
+:root {
+  --bg-color: #f4f4f0;
+  --card-bg: white;
+  --primary-color: #ffeb3b; /* vibrant yellow */
+  --secondary-color: #00e5ff; /* cyan */
+  --accent-color: #ff4081; /* pink */
+  --text-color: #111;
+  --btn-text-color: white;
+  --blockquote-bg: #f9f9f9;
+  --border-radius: 8px;
+  --border-width: 4px;
+}
+
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --card-bg: #2a2a2a;
+  --primary-color: #8dbf0a; /* dimmed neon green */
+  --secondary-color: #c90265; /* dimmed bright fuchsia */
+  --accent-color: #02b3c7; /* dimmed cyan */
+  --text-color: #eee;
+  --btn-text-color: #111;
+  --blockquote-bg: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+body {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background-color: var(--secondary-color);
+  border: var(--border-width) solid var(--text-color);
+  border-radius: var(--border-radius);
+  box-shadow: 6px 6px 0px var(--text-color);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 0;
+  color: #111; /* Keep header text dark even in dark mode for contrast with bright secondary-color */
+}
+
+body.dark-mode header h1 {
+  color: #eee;
+}
+
+.header-controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#theme-toggle {
+  background-color: var(--card-bg);
+  border: var(--border-width) solid var(--text-color);
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 4px 4px 0px var(--text-color);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+#theme-toggle:hover {
+  background-color: var(--primary-color);
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--text-color);
+}
+
+#theme-toggle:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--text-color);
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+}
+
+nav button {
+  background-color: var(--card-bg);
+  border: var(--border-width) solid var(--text-color);
+  color: var(--text-color);
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  box-shadow: 4px 4px 0px var(--text-color);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+nav button.active, nav button:hover {
+  background-color: var(--primary-color);
+  color: #111; /* Dark text for contrast on primary color */
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--text-color);
+}
+
+nav button:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--text-color);
+}
+
+/* Sections */
+section {
+  display: none; /* hidden by default */
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+section.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Card Style */
+.card {
+  background-color: var(--card-bg);
+  border: var(--border-width) solid var(--text-color);
+  border-radius: var(--border-radius);
+  box-shadow: 8px 8px 0px var(--text-color);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: #111;
+  padding: 0.2rem 0.5rem;
+  border: 3px solid var(--text-color);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.job-date {
+  font-weight: bold;
+  color: #111;
+  background-color: var(--secondary-color);
+  padding: 0.1rem 0.4rem;
+  border: 2px solid var(--text-color);
+  display: inline-block;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+ul {
+  list-style-type: square;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 3px solid var(--accent-color);
+}
+
+a:hover {
+  background-color: var(--accent-color);
+  color: #111;
+}
+
+/* Blog Styles */
+.blog-post-card {
+  background-color: var(--card-bg);
+  border: var(--border-width) solid var(--text-color);
+  border-radius: var(--border-radius);
+  box-shadow: 6px 6px 0px var(--text-color);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.blog-post-card:hover {
+  background-color: var(--primary-color);
+  color: #111;
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0px var(--text-color);
+}
+
+.blog-post-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.blog-date {
+  font-size: 0.9rem;
+  font-weight: bold;
+  display: inline-block;
+  background-color: var(--text-color);
+  color: var(--card-bg);
+  padding: 0.2rem 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#article-content {
+  background-color: var(--card-bg);
+  border: var(--border-width) solid var(--text-color);
+  border-radius: var(--border-radius);
+  box-shadow: 8px 8px 0px var(--text-color);
+  padding: 2rem;
+}
+
+#article-content h1 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 2.2rem;
+}
+
+#article-content h2, #article-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#article-content p {
+  margin-bottom: 1rem;
+}
+
+#article-content img {
+  max-width: 100%;
+  border: 3px solid var(--text-color);
+  margin-bottom: 1rem;
+}
+
+#article-content blockquote {
+  border-left: 5px solid var(--accent-color);
+  margin-left: 0;
+  background-color: var(--blockquote-bg);
+  padding: 1rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+#article-content pre {
+  background-color: var(--text-color);
+  color: var(--card-bg);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+#article-content code {
+  font-family: monospace;
+}
+
+/* Button utility */
+.btn {
+  background-color: var(--accent-color);
+  color: var(--btn-text-color);
+  border: var(--border-width) solid var(--text-color);
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  box-shadow: 4px 4px 0px var(--text-color);
+  transition: transform 0.1s, box-shadow 0.1s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: #111;
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px var(--text-color);
+}
+
+.btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px var(--text-color);
+}
+
+/* Profile specific */
+.profile-header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border: var(--border-width) solid var(--text-color);
+  box-shadow: 6px 6px 0px var(--text-color);
+  border-radius: var(--border-radius);
+  object-fit: cover;
+  background-color: var(--accent-color);
+}
+
+.profile-info h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+.profile-info h2 {
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.profile-info p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.profile-info strong {
+  background-color: var(--primary-color);
+  color: #111;
+  padding: 0 0.2rem;
+}
+
+/* Badges for skills */
+.badge {
+  display: inline-block;
+  background-color: var(--card-bg);
+  border: 2px solid var(--text-color);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+}

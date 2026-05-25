@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vincenzo Maria Stanzione | Portfolio & Blog</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Vincenzo Maria Stanzione</h1>
+        <div class="header-controls">
+            <button id="theme-toggle" title="Toggle Dark Mode">🌙</button>
+            <nav>
+                <button id="nav-cv" class="active">Profilo / CV</button>
+                <button id="nav-blog">Blog</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sezione CV -->
+        <section id="section-cv" class="active">
+            
+            <div class="card profile-header">
+                <img src="images/profile.png" alt="Vincenzo Maria Stanzione" class="profile-img">
+                <div class="profile-info">
+                    <h2>Cloud & Software Engineer</h2>
+                    <p><strong>Nato a:</strong> Avezzano (AQ), 27/02/1998</p>
+                    <p><strong>Email:</strong> <a href="mailto:v.m.stanzione@gmail.com">v.m.stanzione@gmail.com</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/vincenzomariastanzione" target="_blank">linkedin.com/in/vincenzomariastanzione</a></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Presentazione</h2>
+                <h3>Software Engineer | AWS Cloud Native & Serverless Architect</h3>
+                <p>Sono un Cloud engineer con 4 anni di esperienza, specializzato nella progettazione e ottimizzazione di architetture Cloud Native ad alta scalabilità su AWS, con un focus verticale sulle tecnologie Serverless. Traduco requisiti complessi in soluzioni resilienti e performanti, curando l'intero ciclo di vita del software. Credo fermamente nella collaborazione interfunzionale come motore per l'innovazione e l'eccellenza tecnica.</p>
+            </div>
+
+            <div class="card">
+                <h2>Skills</h2>
+                <p><strong>Core:</strong></p>
+                <div>
+                    <span class="badge">AWS Solution Architect</span>
+                    <span class="badge">Back-End Development</span>
+                    <span class="badge">Data Platforming</span>
+                    <span class="badge">Team Leading</span>
+                </div>
+                <p style="margin-top: 1rem;"><strong>Tecnologie:</strong></p>
+                <div>
+                    <span class="badge">Python</span>
+                    <span class="badge">Typescript</span>
+                    <span class="badge">Java</span>
+                    <span class="badge">Terraform</span>
+                    <span class="badge">CI/CD pipelines</span>
+                    <span class="badge">Github</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Esperienza Lavorativa</h2>
+                
+                <h3>Storm Reply | Senior Cloud & Software Engineer</h3>
+                <div class="job-date">Settembre 2024 - Attuale, Roma</div>
+                <ul>
+                    <li>Coordinato un team di 2-3 ingegneri, guidando lo sviluppo e prendendo decisioni chiave di progettazione tecnica.</li>
+                    <li>Sviluppo di API REST con Python (FastAPI) e Typescript / Express.</li>
+                    <li>Gestione Infrastructure as Code (IaC) con Terraform.</li>
+                    <li>Sviluppo flussi dati con AWS Glue, Athena e Step Functions.</li>
+                    <li>Deploy di microservizi event-driven con AWS Lambda ed EventBridge.</li>
+                    <li>Ottimizzazione elaborazione dati massivi con AWS Batch e Pandas/Polars.</li>
+                    <li>Gestione migrazioni dati on-premises verso AWS Cloud e ottimizzazione AWS Aurora.</li>
+                </ul>
+
+                <h3>Machine Learning Reply | Machine Learning & Software Engineer</h3>
+                <div class="job-date">Maggio 2022 - Settembre 2024, Milano</div>
+                <ul>
+                    <li>Implementazione di pipeline DevOps per infrastruttura Azure (Eni S.p.a).</li>
+                    <li>Sviluppo back-end per Assistente Chat con Java Spring Boot e Google DialogFlow CX (UnipolSai).</li>
+                    <li>Progettazione PoC RAG full-stack con Python (llama-index) e React, con BE su Google Cloud.</li>
+                    <li>Implementazione soluzioni AI Generativa basate su GPT e Gemini-vision-pro.</li>
+                </ul>
+
+                <h3>CRIF | Data Scientist</h3>
+                <div class="job-date">Ottobre 2021 - Gennaio 2022, Bologna</div>
+                <ul>
+                    <li>Implementazione di un framework AI di explainability (LIME) per il Credit Risk Management.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Istruzione</h2>
+                <h3>Alma Mater Studiorum Bologna | Laurea Magistrale in Ingegneria Informatica</h3>
+                <div class="job-date">Ottobre 2019 - Marzo 2022, Bologna (110L/110)</div>
+                
+                <h3>Alma Mater Studiorum Bologna | Laurea Triennale in Ingegneria Informatica</h3>
+                <div class="job-date">Settembre 2016 - Dicembre 2019, Bologna (107/110)</div>
+            </div>
+
+            <div class="card">
+                <h2>Certificazioni</h2>
+                <ul>
+                    <li><strong>HashiCorp Certified:</strong> Terraform Associate (Luglio 2025): <a href="https://t.ly/3AGjQ" target="_blank">Link</a></li>
+                    <li><strong>AWS Certified Data Engineer:</strong> Associate (Giugno 2025): <a href="https://t.ly/FHt3F" target="_blank">Link</a></li>
+                    <li><strong>Google Professional Cloud Developer</strong> (Novembre 2023): <a href="https://t.ly/OtJ5b" target="_blank">Link</a></li>
+                    <li><strong>IELTS C1</strong> (Maggio 2021)</li>
+                    <li><strong>Cambridge B2</strong> (Maggio 2016)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>Pubblicazioni</h2>
+                <p><strong>GLEAMS: Bridging the Gap Between Local and Global Explanations</strong> (Agosto 2024).<br> Disponibile su: <a href="https://www.arxiv.org/abs/2408.05060" target="_blank">arxiv.org/abs/2408.05060</a></p>
+            </div>
+        </section>
+
+        <!-- Sezione Blog Index -->
+        <section id="section-blog">
+            <div class="card">
+                <h2>Blog / Considerazioni</h2>
+                <div id="blog-list">
+                    <p>Caricamento articoli in corso...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sezione Articolo Singolo (nascosta inizialmente) -->
+        <section id="section-article">
+            <button id="back-to-blog" class="btn">← Torna al Blog</button>
+            <div id="article-content">
+                <!-- Il markdown renderizzato andrà qui -->
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<!-- Libreria Marked per il parsing del Markdown -->
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<!-- Logica SPA -->
+<script src="app.js"></script>
+
+</body>
+</html>

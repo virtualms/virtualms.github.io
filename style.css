@@ -396,3 +396,7 @@ body.en-mode strong.lang-en,
 body.en-mode button.lang-en { 
   display: inline-block !important; 
 }
+/* h2 con la classe lang-en dentro .card deve restare inline-block come la versione italiana */
+body.en-mode .card h2.lang-en {
+  display: inline-block !important;
+}

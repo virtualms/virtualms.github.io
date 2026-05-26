@@ -1,11 +1,11 @@
 ---
-title: "Welcome to my new Blog!"
+title: "Aloha!"
 date: "2026-05-25"
-summary: "First test article for the new SPA infrastructure."
+summary: "My first blog post."
 lang: "en"
 ---
 
-# Welcome to my new space!
+# Aloha!
 
 This is my new **Blog / Portfolio** built entirely in pure HTML, CSS, and JavaScript, following the *Neo Brutalism* stylistic paradigm.
 

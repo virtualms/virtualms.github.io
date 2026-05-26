@@ -1,11 +1,11 @@
 ---
-title: "Benvenuto nel mio nuovo Blog!"
+title: "Aloha!"
 date: "2026-05-25"
-summary: "Primo articolo di test per la nuova infrastruttura SPA."
+summary: "My first blog post."
 lang: "it"
 ---
 
-# Benvenuto nel mio nuovo spazio!
+# Aloha!
 
 Questo è il mio nuovo **Blog / Portfolio** realizzato interamente in puro HTML, CSS e JavaScript, seguendo il paradigma stilistico del *Neo Brutalism*.
 

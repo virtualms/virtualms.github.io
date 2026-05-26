@@ -5,6 +5,7 @@
   --secondary-color: #00e5ff; /* cyan */
   --accent-color: #ff4081; /* pink */
   --text-color: #111;
+  --border-shadow-color: #111; /* color used for solid neo-brutalist shadows/borders */
   --btn-text-color: white;
   --blockquote-bg: #f9f9f9;
   --border-radius: 8px;
@@ -12,14 +13,15 @@
 }
 
 body.dark-mode {
-  --bg-color: #1a1a1a;
-  --card-bg: #2a2a2a;
-  --primary-color: #8dbf0a; /* dimmed neon green */
-  --secondary-color: #c90265; /* dimmed bright fuchsia */
-  --accent-color: #02b3c7; /* dimmed cyan */
-  --text-color: #eee;
-  --btn-text-color: #111;
-  --blockquote-bg: #333;
+  --bg-color: #18181b;
+  --card-bg: #27272a;
+  --primary-color: #7fb800; /* muted lime green — used for highlights/h2 bg */
+  --secondary-color: #9b59b6; /* soft violet — used for header bg, job-date bg */
+  --accent-color: #f5a623; /* warm amber — used for links, accents — readable on green */
+  --text-color: #d9d4c7; /* warm off-white — easier on the eyes than pure white */
+  --border-shadow-color: #4a4740; /* warm dark grey — replaces harsh white borders/shadows */
+  --btn-text-color: #18181b;
+  --blockquote-bg: #2f2f33;
 }
 
 * {
@@ -49,9 +51,9 @@ header {
   margin-bottom: 2rem;
   padding: 1.5rem;
   background-color: var(--secondary-color);
-  border: var(--border-width) solid var(--text-color);
+  border: var(--border-width) solid var(--border-shadow-color);
   border-radius: var(--border-radius);
-  box-shadow: 6px 6px 0px var(--text-color);
+  box-shadow: 6px 6px 0px var(--border-shadow-color);
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -64,7 +66,7 @@ header h1 {
 }
 
 body.dark-mode header h1 {
-  color: #eee;
+  color: #f0ece3;
 }
 
 .header-controls {
@@ -75,7 +77,7 @@ body.dark-mode header h1 {
 
 #theme-toggle {
   background-color: var(--card-bg);
-  border: var(--border-width) solid var(--text-color);
+  border: var(--border-width) solid var(--border-shadow-color);
   padding: 0.5rem;
   font-size: 1.2rem;
   cursor: pointer;
@@ -85,19 +87,19 @@ body.dark-mode header h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 4px 4px 0px var(--text-color);
+  box-shadow: 4px 4px 0px var(--border-shadow-color);
   transition: transform 0.1s, box-shadow 0.1s;
 }
 
 #theme-toggle:hover {
   background-color: var(--primary-color);
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px var(--text-color);
+  box-shadow: 2px 2px 0px var(--border-shadow-color);
 }
 
 #theme-toggle:active {
   transform: translate(4px, 4px);
-  box-shadow: 0px 0px 0px var(--text-color);
+  box-shadow: 0px 0px 0px var(--border-shadow-color);
 }
 
 nav {
@@ -107,14 +109,14 @@ nav {
 
 nav button {
   background-color: var(--card-bg);
-  border: var(--border-width) solid var(--text-color);
+  border: var(--border-width) solid var(--border-shadow-color);
   color: var(--text-color);
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
   border-radius: var(--border-radius);
-  box-shadow: 4px 4px 0px var(--text-color);
+  box-shadow: 4px 4px 0px var(--border-shadow-color);
   transition: transform 0.1s, box-shadow 0.1s;
 }
 
@@ -122,12 +124,12 @@ nav button.active, nav button:hover {
   background-color: var(--primary-color);
   color: #111; /* Dark text for contrast on primary color */
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px var(--text-color);
+  box-shadow: 2px 2px 0px var(--border-shadow-color);
 }
 
 nav button:active {
   transform: translate(4px, 4px);
-  box-shadow: 0px 0px 0px var(--text-color);
+  box-shadow: 0px 0px 0px var(--border-shadow-color);
 }
 
 /* Sections */
@@ -148,9 +150,9 @@ section.active {
 /* Card Style */
 .card {
   background-color: var(--card-bg);
-  border: var(--border-width) solid var(--text-color);
+  border: var(--border-width) solid var(--border-shadow-color);
   border-radius: var(--border-radius);
-  box-shadow: 8px 8px 0px var(--text-color);
+  box-shadow: 8px 8px 0px var(--border-shadow-color);
   padding: 2rem;
   margin-bottom: 2rem;
 }
@@ -164,7 +166,7 @@ section.active {
   background-color: var(--primary-color);
   color: #111;
   padding: 0.2rem 0.5rem;
-  border: 3px solid var(--text-color);
+  border: 3px solid var(--border-shadow-color);
 }
 
 .card h3 {
@@ -175,10 +177,10 @@ section.active {
 
 .job-date {
   font-weight: bold;
-  color: #111;
+  color: #f0ece3;
   background-color: var(--secondary-color);
   padding: 0.1rem 0.4rem;
-  border: 2px solid var(--text-color);
+  border: 2px solid var(--border-shadow-color);
   display: inline-block;
   margin-bottom: 1rem;
   font-size: 0.9rem;
@@ -209,9 +211,9 @@ a:hover {
 /* Blog Styles */
 .blog-post-card {
   background-color: var(--card-bg);
-  border: var(--border-width) solid var(--text-color);
+  border: var(--border-width) solid var(--border-shadow-color);
   border-radius: var(--border-radius);
-  box-shadow: 6px 6px 0px var(--text-color);
+  box-shadow: 6px 6px 0px var(--border-shadow-color);
   padding: 1.5rem;
   margin-bottom: 1.5rem;
   cursor: pointer;
@@ -222,7 +224,7 @@ a:hover {
   background-color: var(--primary-color);
   color: #111;
   transform: translate(2px, 2px);
-  box-shadow: 4px 4px 0px var(--text-color);
+  box-shadow: 4px 4px 0px var(--border-shadow-color);
 }
 
 .blog-post-card h3 {
@@ -242,9 +244,9 @@ a:hover {
 
 #article-content {
   background-color: var(--card-bg);
-  border: var(--border-width) solid var(--text-color);
+  border: var(--border-width) solid var(--border-shadow-color);
   border-radius: var(--border-radius);
-  box-shadow: 8px 8px 0px var(--text-color);
+  box-shadow: 8px 8px 0px var(--border-shadow-color);
   padding: 2rem;
 }
 
@@ -295,13 +297,13 @@ a:hover {
 .btn {
   background-color: var(--accent-color);
   color: var(--btn-text-color);
-  border: var(--border-width) solid var(--text-color);
+  border: var(--border-width) solid var(--border-shadow-color);
   padding: 0.5rem 1rem;
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
   border-radius: var(--border-radius);
-  box-shadow: 4px 4px 0px var(--text-color);
+  box-shadow: 4px 4px 0px var(--border-shadow-color);
   transition: transform 0.1s, box-shadow 0.1s;
   display: inline-flex;
   align-items: center;
@@ -312,12 +314,12 @@ a:hover {
   background-color: var(--primary-color);
   color: #111;
   transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px var(--text-color);
+  box-shadow: 2px 2px 0px var(--border-shadow-color);
 }
 
 .btn:active {
   transform: translate(4px, 4px);
-  box-shadow: 0px 0px 0px var(--text-color);
+  box-shadow: 0px 0px 0px var(--border-shadow-color);
 }
 
 /* Profile specific */
@@ -331,8 +333,8 @@ a:hover {
 .profile-img {
   width: 180px;
   height: 180px;
-  border: var(--border-width) solid var(--text-color);
-  box-shadow: 6px 6px 0px var(--text-color);
+  border: var(--border-width) solid var(--border-shadow-color);
+  box-shadow: 6px 6px 0px var(--border-shadow-color);
   border-radius: var(--border-radius);
   object-fit: cover;
   background-color: var(--accent-color);
@@ -350,6 +352,9 @@ a:hover {
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
+body.dark-mode .profile-info h2 {
+  color: #111;
+}
 .profile-info p {
   font-size: 1.1rem;
   margin-bottom: 0.5rem;
@@ -364,7 +369,7 @@ a:hover {
 .badge {
   display: inline-block;
   background-color: var(--card-bg);
-  border: 2px solid var(--text-color);
+  border: 2px solid var(--border-shadow-color);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
   font-weight: bold;

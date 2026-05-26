@@ -1,5 +1,5 @@
 :root {
-  --bg-color: #f4f4f0;
+  --bg-color: #fdf8e8; /* warm cream yellow — easier on the eyes */
   --card-bg: white;
   --primary-color: #ffeb3b; /* vibrant yellow */
   --secondary-color: #00e5ff; /* cyan */
@@ -177,13 +177,17 @@ section.active {
 
 .job-date {
   font-weight: bold;
-  color: #f0ece3;
+  color: #111;
   background-color: var(--secondary-color);
   padding: 0.1rem 0.4rem;
   border: 2px solid var(--border-shadow-color);
   display: inline-block;
   margin-bottom: 1rem;
   font-size: 0.9rem;
+}
+
+body.dark-mode .job-date {
+  color: #f0ece3;
 }
 
 ul {

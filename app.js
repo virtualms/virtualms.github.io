@@ -21,11 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
         currentLang = lang;
         if (lang === 'en') {
             document.body.classList.add('en-mode');
-            if (langToggle) langToggle.textContent = 'ITA';
+            if (langToggle) langToggle.textContent = '🇮🇹';
             localStorage.setItem('lang', 'en');
         } else {
             document.body.classList.remove('en-mode');
-            if (langToggle) langToggle.textContent = 'ENG';
+            if (langToggle) langToggle.textContent = '🇬🇧';
             localStorage.setItem('lang', 'it');
         }
         
